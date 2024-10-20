@@ -1,0 +1,158 @@
+//------------------------------ARRAY I DSA----------------------------------------------------//
+import java.util.*;
+class function{
+    Scanner s=new Scanner(System.in);
+    void create(int[] arr){
+        for(int i=0;i< arr.length;i++){
+            System.out.println("Enter value in array position "+i+" :");
+            arr[i]=s.nextInt();
+        }
+    }
+    void print(int[] arr){
+        System.out.println("The array is:");
+        for(int i=0;i<arr.length;i++){
+            System.out.println(arr[i]);
+        }
+    }
+    void replace(int[] arr){
+        System.out.println("Enter the value you want to insert :");
+        int v=s.nextInt();
+        System.out.println("Enter the index in which you want to add the number:");
+        int u=s.nextInt();
+        arr[u]=v;
+        for(int i=0;i<arr.length;i++){
+            System.out.println(arr[i]);
+        }
+    }
+    void search(int [] arr) {
+        System.out.println("Enter a number you want to search:");
+        int i1 = s.nextInt();
+        for (int i = 0; i < arr.length; i++) {
+            if (i1 == arr[i]) {
+                System.out.println("This number is present on index " + i + " .");
+                break;
+            }
+            else{
+                System.out.println("number not found.");
+            }
+        }
+    }
+    void sum(int [] arr){
+        System.out.println("The sum of the array is :");
+        int sum=0;
+        for(int i=0;i<arr.length;i++){
+            sum=sum+arr[i];
+        }
+        System.out.println(sum);
+    }
+    void  pro(int [] arr){
+        System.out.println("The product of the array is :");
+        int pro=1;
+        for(int i=0;i<arr.length;i++){
+            pro=pro+arr[i];
+        }
+        System.out.println(pro);
+    }
+    void average(int [] arr){
+        System.out.println("The average of the array is :");
+        int sum=0;
+        for(int i=0;i<arr.length;i++){
+            sum=sum+arr[i];
+        }
+        int avg = sum / arr.length;
+        System.out.println(avg);
+    }
+    void remove(int[] arr){
+        System.out.println("Enter the number you want to remove:");
+        int u=s.nextInt();
+        for(int i=0;i<arr.length;i++){
+            if (u == arr[i]) {
+                arr[i]= Integer.parseInt(null);
+            }
+        }
+        System.out.println("Array after removing :");
+        for(int i=0;i<arr.length;i++){
+            System.out.println(arr[i]);
+        }
+    }
+    void even(int [] arr){
+        int even=0;
+        for(int i=0;i<arr.length;i++){
+            if(arr[i]%2==0){
+                System.out.println(arr[i]+" number in array is even.");
+                even++;
+            }
+        }  System.out.println("The number of even int in this array is: "+even);
+    }
+    void odd(int [] arr){
+        int odd=0;
+        for(int i=0;i<arr.length;i++){
+            if(arr[i]%2!=0){
+                System.out.println(arr[i]+" number in array is odd.");
+                odd++;
+            }
+        }        System.out.println("The number of odd int in this array is: "+odd);
+    }
+   void reverse(int [] arr){
+       System.out.println("Reverse array:");
+       for(int i= arr.length-1;i>=0;i--){
+           System.out.println(arr[i]);
+       }
+   }
+   void min(int [] arr){
+        int mi=arr[0];
+       for(int i=0;i<arr.length;i++){
+         if(mi>arr[i]){
+             mi=arr[i];
+         }
+       }
+       System.out.println("The min is :"+mi);
+   }
+   void max(int [] arr ){
+        int ma=arr[0];
+       for(int i=0;i<arr.length;i++){
+           if(ma<arr[i]){
+               ma=arr[i];
+           }
+       }
+       System.out.println("The max is :"+ma);
+   }
+}
+public class main {
+    public static void main(String [] args){
+        int [] arr=new int[7];
+        function m=new function();
+        m.create(arr);
+        System.out.println("------------------------------------");
+        m.print(arr);
+        System.out.println("------------------------------------");
+        m.replace(arr);
+        System.out.println("------------------------------------");
+        m.search(arr);
+        System.out.println("------------------------------------");
+       // m.remove(arr);
+        System.out.println("------------------------------------");
+        m.even(arr);
+        System.out.println("------------------------------------");
+        m.odd(arr);
+        System.out.println("------------------------------------");
+        m.min(arr);
+        System.out.println("------------------------------------");
+        m.max(arr);
+        System.out.println("------------------------------------");
+        m.sum(arr);
+        System.out.println("------------------------------------");
+        m.reverse(arr);
+        System.out.println("------------------------------------");
+        m.pro(arr);
+        System.out.println("------------------------------------");
+        m.average(arr);
+        System.out.println("------------------------------------");
+    }
+}
+
+CODE EXPLANATION:
+
+This Java program packs a punch with a variety of operations on an integer array. It defines a class with methods to fill, display, replace, search, and remove elements. Plus, it calculates sums, products, averages, and figures out the even and odd numbers. You can also reverse the array and find the smallest and largest values. In the main part, it sets up an array with seven spots, and an object is created to run all these methods in order. Using Scanner for input means it’s interactive, changing based on what you enter. Each method is clearly focused on a specific task, making the array handling straightforward and organized. However, there’s a little hiccup with the product calculation—it adds values instead of multiplying them. Overall, it’s a great example of array manipulation, making sure users are involved and the experience is personalized.
+
+------------------------------------------------------------------------------------------------------------
