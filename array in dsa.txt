@@ -93,34 +93,49 @@ class function{
             }
         }        System.out.println("The number of odd int in this array is: "+odd);
     }
-   void reverse(int [] arr){
-       System.out.println("Reverse array:");
-       for(int i= arr.length-1;i>=0;i--){
-           System.out.println(arr[i]);
-       }
-   }
-   void min(int [] arr){
+    void reverse(int [] arr){
+        System.out.println("Reverse array:");
+        for(int i= arr.length-1;i>=0;i--){
+            System.out.println(arr[i]);
+        }
+    }
+    void min(int [] arr){
         int mi=arr[0];
-       for(int i=0;i<arr.length;i++){
-         if(mi>arr[i]){
-             mi=arr[i];
-         }
-       }
-       System.out.println("The min is :"+mi);
-   }
-   void max(int [] arr ){
+        for(int i=0;i<arr.length;i++){
+            if(mi>arr[i]){
+                mi=arr[i];
+            }
+        }
+        System.out.println("The min is :"+mi);
+    }
+    void max(int [] arr ){
         int ma=arr[0];
-       for(int i=0;i<arr.length;i++){
-           if(ma<arr[i]){
-               ma=arr[i];
-           }
-       }
-       System.out.println("The max is :"+ma);
-   }
+        for(int i=0;i<arr.length;i++){
+            if(ma<arr[i]){
+                ma=arr[i];
+            }
+        }
+        System.out.println("The max is :"+ma);
+    }
+    void deletefirst(int [] arr){
+        System.out.println("After deleting first:");
+        for(int i=1;i<arr.length;i++){
+            System.out.println(arr[i]);
+        }
+    }
+    void deletelastt(int [] arr){
+        System.out.println("After deleting last:");
+        for(int i=0;i<arr.length-1;i++){
+            System.out.println(arr[i]);
+        }
+    }
 }
-public class main {
+class main {
     public static void main(String [] args){
-        int [] arr=new int[7];
+        Scanner s=new Scanner(System.in);
+        System.out.println("Enter the length off array:");
+        int l=s.nextInt();
+        int [] arr=new int[l];
         function m=new function();
         m.create(arr);
         System.out.println("------------------------------------");
@@ -130,7 +145,7 @@ public class main {
         System.out.println("------------------------------------");
         m.search(arr);
         System.out.println("------------------------------------");
-       // m.remove(arr);
+        // m.remove(arr);
         System.out.println("------------------------------------");
         m.even(arr);
         System.out.println("------------------------------------");
@@ -148,9 +163,13 @@ public class main {
         System.out.println("------------------------------------");
         m.average(arr);
         System.out.println("------------------------------------");
+        m.deletefirst(arr);
+        System.out.println("------------------------------------");
+        m.deletelastt(arr);
+        System.out.println("------------------------------------");
+        System.out.println("-------------------------Program end here_____________________");
     }
 }
-
 CODE EXPLANATION:
 
 This Java program packs a punch with a variety of operations on an integer array. It defines a class with methods to fill, display, replace, search, and remove elements. Plus, it calculates sums, products, averages, and figures out the even and odd numbers. You can also reverse the array and find the smallest and largest values. In the main part, it sets up an array with seven spots, and an object is created to run all these methods in order. Using Scanner for input means it’s interactive, changing based on what you enter. Each method is clearly focused on a specific task, making the array handling straightforward and organized. However, there’s a little hiccup with the product calculation—it adds values instead of multiplying them. Overall, it’s a great example of array manipulation, making sure users are involved and the experience is personalized.
